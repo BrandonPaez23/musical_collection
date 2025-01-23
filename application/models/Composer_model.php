@@ -5,7 +5,7 @@ class Composer_model extends CI_Model {
 
     public function __construct() {
         parent::__construct();
-        // La base de datos ya se autocarga, no es necesario volver a cargarla aquí
+        $this->load->database(); 
     }
 
     public function get_all_composers() {

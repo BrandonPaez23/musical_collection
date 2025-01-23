@@ -100,6 +100,9 @@
                 <a href="<?= site_url('musical_piece') ?>" class="btn btn-success btn-lg">
                     <i class="bi bi-file-earmark-music"></i> Manage Musical Pieces
                 </a>
+                <a href="<?= site_url('audit') ?>" class="btn btn-warning btn-lg">
+                    <i class="bi bi-clipboard-data"></i> Manage Audits
+                </a>
             </div>
         </div>
         <div class="info-section mt-5">

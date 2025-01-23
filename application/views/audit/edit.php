@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Audit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Add Composer</title>
     <style>
         body {
             background-color: #f8f9fa;
@@ -17,15 +19,6 @@
         h1 {
             color: #007bff;
             font-size: 2.5rem;
-        }
-        .btn {
-            background-color: #007bff;
-            border-color: #007bff;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-            border-color: #004085;
         }
         .form-label {
             font-weight: bold;
@@ -60,28 +53,37 @@
     </style>
 </head>
 <body>
-<div class="container mt-4">
-    <h1>Add Composer</h1>
-    <form action="<?= site_url('composer/create') ?>" method="post">
-        <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+<div class="container mt-5">
+    <h2 class="text-center">Edit Audit</h2>
+    <form action="<?= site_url('audit/update/' . $audit->id) ?>" method="post">
+        <div class="form-group mb-3">
+            <label for="date_audit">Date</label>
+            <input type="datetime-local" class="form-control" id="date_audit" name="date_audit" value="<?= date('Y-m-d\TH:i:s', strtotime($audit->date_audit)) ?>" required>
         </div>
-        <div class="mb-3">
-            <label for="nationality" class="form-label">Nationality</label>
-            <input type="text" class="form-control" id="nationality" name="nationality" required>
+        <div class="form-group mb-3">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="3" required><?= $audit->description ?></textarea>
         </div>
-        <div class="mb-3">
-            <label for="birth_date" class="form-label">Birth Date</label>
-            <input type="date" class="form-control" id="birth_date" name="birth_date" required>
+        <div class="form-group mb-3">
+            <label for="user_audit">User</label>
+            <input type="text" class="form-control" id="user_audit" name="user_audit" value="<?= $audit->user_audit ?>" required>
         </div>
-        <button type="submit" class="btn btn-primary">Save</button>
-        <a href="<?= site_url('composer') ?>" class="btn btn-secondary">Cancel</a>
+        <div class="form-group mb-3">
+            <label for="gender">Gender</label>
+            <input type="text" class="form-control" id="gender" name="gender" value="<?= $audit->gender ?>" required>
+        </div>
+        <button type="submit" class="btn btn-success">
+            <i class="bi bi-save"></i> Update
+        </button>
+        <a href="<?= site_url('audit') ?>" class="btn btn-danger">
+            <i class="bi bi-arrow-left"></i> Back
+        </a>
     </form>
 </div>
     <footer class="footer">
         <p>Technical University of Cotopaxi &copy; Developed by Brandon Paez & Bryan Sanchez</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </body>
 </html>

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Composers</title>
     <style>
         body {
             background-color: #f8f9fa;
@@ -17,15 +19,6 @@
         h1 {
             color: #007bff;
             font-size: 2.5rem;
-        }
-        .btn {
-            background-color: #007bff;
-            border-color: #007bff;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-            border-color: #004085;
         }
         .table thead {
             background-color: #007bff;
@@ -66,33 +59,47 @@
     </style>
 </head>
 <body>
-<div class="container mt-4">
-    <h1>Composers</h1>
-    <a href="<?= site_url('composer/create') ?>" class="btn btn-primary mb-3">Add Composer</a>
+<div class="container mt-5">
+    <h2 class="text-center">Audit Management</h2>
+    <a href="<?= site_url('audit/create') ?>" class="btn btn-primary mb-3">
+        <i class="bi bi-plus-circle"></i> Create New Audit
+    </a>
     <a href="<?= site_url('home') ?>" class="btn btn-danger mb-3"><i class="bi bi-house-door"></i> Back to Home</a>
-    <table class="table table-striped mt-3">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Nationality</th>
-                <th>Birth Date</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>User</th>
+                <th>Gender</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($composers as $composer): ?>
+            <?php if (!empty($audits)): ?>
+                <?php foreach ($audits as $audit): ?>
+                    <tr>
+                        <td><?= $audit['id'] ?></td>
+                        <td><?= $audit['date_audit'] ?></td>
+                        <td><?= $audit['description'] ?></td>
+                        <td><?= $audit['user_audit'] ?></td>
+                        <td><?= $audit['gender'] ?></td>
+                        <td>
+                            <a href="<?= site_url('audit/edit/' . $audit['id']) ?>" class="btn btn-warning btn-sm">
+                                <i class="bi bi-pencil"></i> Edit
+                            </a>
+                            <a href="<?= site_url('audit/delete/' . $audit['id']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this audit?')">
+                                <i class="bi bi-trash"></i> Delete
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
                 <tr>
-                    <td><?= $composer['id'] ?></td>
-                    <td><?= $composer['name'] ?></td>
-                    <td><?= $composer['nationality'] ?></td>
-                    <td><?= $composer['birth_date'] ?></td>
-                    <td>
-                        <a href="<?= site_url('composer/edit/'.$composer['id']) ?>" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="<?= site_url('composer/delete/'.$composer['id']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this composer?')">Delete</a>
-                    </td>
+                    <td colspan="6" class="text-center">No audits found.</td>
                 </tr>
-            <?php endforeach; ?>
+            <?php endif; ?>
         </tbody>
     </table>
 </div>
