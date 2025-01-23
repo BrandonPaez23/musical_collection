@@ -85,11 +85,7 @@
         </tbody>
     </table>
 </div>
-<<<<<<< HEAD
     <footer class="footer">
-=======
-<footer class="footer">
->>>>>>> 807ba33d97e7724ef7162f77eb732d7852c4222d
         <p>Technical University of Cotopaxi &copy; Developed by Brandon Paez & Bryan Sanchez</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
