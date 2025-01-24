@@ -3,49 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Musical Genre</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <title>Create License</title>
     <style>
         body {
             background-color: #f8f9fa;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
         }
         .container {
+            max-width: 600px;
+            margin: 50px auto;
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+            padding: 20px;
         }
         h1 {
             color: #007bff;
-            font-size: 2.5rem;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
         }
         .form-label {
             font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
         }
         .form-control, .form-select {
+            width: 100%;
+            padding: 10px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ced4da;
+            margin-bottom: 15px;
         }
-        .mb-3 {
-            margin-bottom: 1.5rem;
+        .form-control:focus, .form-select:focus {
+            outline: none;
+            border-color: #80bdff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
         }
-        .btn-secondary {
-            background-color: #6c757d;
-            border-color: #6c757d;
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #ffffff;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        .btn-secondary:hover {
-            background-color: #5a6268;
-            border-color: #545b62;
+        .btn-primary:hover {
+            background-color: #0056b3;
         }
         .footer {
             margin-top: 30px;
-            padding: 20px;
+            padding: 15px;
             background: #2a5298;
             color: #ffffff;
             text-align: center;
+            border-radius: 5px;
         }
         .footer p {
             margin: 0;
@@ -54,33 +71,33 @@
     </style>
 </head>
 <body>
-    <h1>Create a New License</h1>
-    <form action="<?= site_url('license/create') ?>" method="post">
-        <label>Type:</label>
-        <select name="type" required>
-            <option value="Premium">Premium</option>
-            <option value="OpenSource">OpenSource</option>
-        </select><br>
+    <div class="container">
+        <h1>Create a New License</h1>
+        <form action="<?= site_url('license/create') ?>" method="post">
+            <label for="type" class="form-label">Type:</label>
+            <select name="type" id="type" class="form-select" required>
+                <option value="Premium">Premium</option>
+                <option value="OpenSource">OpenSource</option>
+            </select>
 
-        <label>Cost:</label>
-        <input type="number" step="0.01" name="cost" required><br>
+            <label for="cost" class="form-label">Cost:</label>
+            <input type="number" step="0.01" name="cost" id="cost" class="form-control" required>
 
-        <label>Acronym:</label>
-        <input type="text" name="acronym" maxlength="10" required><br>
+            <label for="acronym" class="form-label">Acronym:</label>
+            <input type="text" name="acronym" id="acronym" maxlength="10" class="form-control" required>
 
-        <label>Status:</label>
-        <select name="status" required>
-            <option value="MIT">MIT</option>
-            <option value="BSD">BSD</option>
-            <option value="ACTIVE">ACTIVE</option>
-        </select><br>
+            <label for="status" class="form-label">Status:</label>
+            <select name="status" id="status" class="form-select" required>
+                <option value="MIT">MIT</option>
+                <option value="BSD">BSD</option>
+                <option value="ACTIVE">ACTIVE</option>
+            </select>
 
-        <button type="submit">Save</button>
-    </form>
-</body>
+            <button type="submit" class="btn-primary">Save</button>
+        </form>
+    </div>
     <footer class="footer">
         <p>Technical University of Cotopaxi &copy; Developed by Brandon Paez & Bryan Sanchez</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
-
