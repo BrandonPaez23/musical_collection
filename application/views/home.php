@@ -103,6 +103,9 @@
                 <a href="<?= site_url('audit') ?>" class="btn btn-warning btn-lg">
                     <i class="bi bi-clipboard-data"></i> Manage Audits
                 </a>
+                <a href="<?= site_url('license') ?>" class="btn btn-info btn-lg">
+                    <i class="bi bi-card-list"></i> Manage Licenses
+                </a>
             </div>
         </div>
         <div class="info-section mt-5">

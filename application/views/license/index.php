@@ -18,15 +18,6 @@
             color: #007bff;
             font-size: 2.5rem;
         }
-        .btn {
-            background-color: #007bff;
-            border-color: #007bff;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-            border-color: #004085;
-        }
         .form-label {
             font-weight: bold;
         }
@@ -93,5 +84,4 @@
         <p>Technical University of Cotopaxi &copy; Developed by Brandon Paez & Bryan Sanchez</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 </html>
