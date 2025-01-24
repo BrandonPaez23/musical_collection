@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List of Licenses</title>
     <style>
-        /* Bootstrap-like CSS */
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
             margin: 0;
             padding: 0;
         }
-
         .container {
             margin: 2rem auto;
             max-width: 900px;
@@ -21,7 +19,6 @@
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
         .btn {
             display: inline-block;
             font-size: 1rem;
@@ -32,62 +29,49 @@
             color: white;
             transition: background-color 0.3s;
         }
-
         .btn-success {
             background-color: #28a745;
         }
-
         .btn-success:hover {
             background-color: #218838;
         }
-
         .btn-danger {
             background-color: #dc3545;
         }
-
         .btn-danger:hover {
             background-color: #c82333;
         }
-
         .btn-warning {
             background-color: #ffc107;
         }
-
         .btn-warning:hover {
             background-color: #e0a800;
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
-
         th, td {
             padding: 12px 15px;
             border: 1px solid #ddd;
             text-align: left;
         }
-
         th {
             background-color: #007bff;
             color: white;
         }
-
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
-
-        footer {
-            margin-top: 20px;
+        .footer {
+            margin-top: 30px;
+            padding: 20px;
+            background: #2a5298;
+            color: #ffffff;
             text-align: center;
-            padding: 10px 0;
-            background-color: #343a40;
-            color: white;
-            border-radius: 5px;
         }
-
-        footer p {
+        .footer p {
             margin: 0;
             font-size: 0.9rem;
         }
@@ -97,6 +81,7 @@
     <div class="container">
         <h1 class="text-center">Licenses</h1>
         <a href="<?= site_url('license/create') ?>" class="btn btn-success">Create New License</a>
+        <a href="<?= site_url('home') ?>" class="btn btn-danger mb-3"><i class="bi bi-house-door"></i> Back to Home</a>
         <table>
             <thead>
                 <tr>
@@ -125,7 +110,7 @@
             </tbody>
         </table>
     </div>
-    <footer>
+    <footer class="footer">
         <p>Technical University of Cotopaxi &copy; Developed by Brandon Paez & Bryan Sanchez</p>
     </footer>
 </body>

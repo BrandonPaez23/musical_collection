@@ -18,15 +18,6 @@
             color: #007bff;
             font-size: 2.5rem;
         }
-        .btn {
-            background-color: #007bff;
-            border-color: #007bff;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-            border-color: #004085;
-        }
         .table th, .table td {
             text-align: center;
             vertical-align: middle;

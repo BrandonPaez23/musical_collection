@@ -94,6 +94,7 @@
             </select>
 
             <button type="submit" class="btn-primary">Update</button>
+            <a href="<?php echo site_url('license')?>" class="btn-danger">Cancel</a>
         </form>
     </div>
     <footer class="footer">
